@@ -12,7 +12,7 @@ on:
       build_target:
         description: "Build target"
         required: false
-        default: "all-64bit"
+        default: "64bit-v3"
         type: choice
         options:
         - 32bit
@@ -74,7 +74,7 @@ jobs:
             const commit = await github.rest.repos.getCommit({
               owner: 'mpv-player',
               repo: 'mpv',
-              ref: `master`
+              ref: `release/0.40`
             })
             core.setOutput('sha', String(commit.data.sha))
             
